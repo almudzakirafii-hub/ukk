@@ -51,7 +51,8 @@ Aplikasi ini dibuat sebagai bagian dari **Ujian Kompetensi Keahlian (UKK)** untu
 
 ## 👤 Use Case Diagram
 
-![Use Case - Garuda Hustler Database](public/images/dump/Untitled Workspace.jpg)
+   ![Use Case](https://raw.githubusercontent.com/almudzakirafii-hub/ukk/main/public/images/dump/Untitled%20Workspace.jpg)
+
 
 ## 🚀 Instalasi
 
