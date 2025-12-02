@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title') - Admin {{ config('app.name') }}</title>
+    <title><?php echo $__env->yieldContent('title'); ?> - Admin <?php echo e(config('app.name')); ?></title>
     
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
     
-    @stack('css')
+    <?php echo $__env->yieldPushContent('css'); ?>
     <style>
         @media (max-width: 768px) {
             .sidebar {
@@ -41,7 +41,7 @@
 <body class="bg-gradient-to-br from-[#1a1f35] to-[#0d1b2a]">
     <div class="flex h-screen bg-gradient-to-br from-[#1a1f35] to-[#0d1b2a]">
         <!-- Sidebar -->
-        @include('admin.layouts.sidebar')
+        <?php echo $__env->make('admin.layouts.sidebar', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
         
         <!-- Sidebar Overlay (Mobile) -->
         <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -49,34 +49,35 @@
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- Top Navigation -->
-            @include('admin.layouts.header')
+            <?php echo $__env->make('admin.layouts.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
             
             <!-- Page Content -->
             <main class="flex-1 overflow-auto">
                 <div class="p-4 md:p-6">
-                    @if ($errors->any())
+                    <?php if($errors->any()): ?>
                         <div class="mb-4 bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded">
                             <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
+                                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <li><?php echo e($error); ?></li>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @if (session('success'))
+                    <?php if(session('success')): ?>
                         <div class="mb-4 bg-green-500/20 border border-green-500/50 text-green-200 px-4 py-3 rounded">
-                            {{ session('success') }}
+                            <?php echo e(session('success')); ?>
+
                         </div>
-                    @endif
+                    <?php endif; ?>
                     
-                    @yield('content')
+                    <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </main>
         </div>
     </div>
     
-    @stack('js')
+    <?php echo $__env->yieldPushContent('js'); ?>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const toggleBtn = document.getElementById('sidebarToggle');
@@ -106,3 +107,4 @@
     </script>
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\ukk\resources\views/admin/layouts/app.blade.php ENDPATH**/ ?>

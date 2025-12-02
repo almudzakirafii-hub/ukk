@@ -44,7 +44,8 @@ class MatchController extends Controller
         $validated = $request->validate([
             'team_id' => 'required|exists:teams,id',
             'opponent' => 'required|string|max:255',
-            'match_date' => 'required|date_format:Y-m-d H:i',
+            'match_date' => 'nullable|date_format:Y-m-d',
+            'match_time' => 'nullable|date_format:H:i',
             'location' => 'required|string|max:255',
             'type' => 'required|in:home,away',
             'status' => 'required|in:scheduled,completed,cancelled',
@@ -52,6 +53,14 @@ class MatchController extends Controller
             'opponent_score' => 'nullable|integer|min:0',
             'notes' => 'nullable|string',
         ]);
+
+        // Combine date and time into Y-m-d H:i format if both provided
+        if ($validated['match_date'] && $validated['match_time']) {
+            $validated['match_date'] = $validated['match_date'] . ' ' . $validated['match_time'];
+        } else {
+            $validated['match_date'] = null;
+        }
+        unset($validated['match_time']);
 
         Game::create($validated);
 
@@ -77,7 +86,8 @@ class MatchController extends Controller
         $validated = $request->validate([
             'team_id' => 'required|exists:teams,id',
             'opponent' => 'required|string|max:255',
-            'match_date' => 'required|date_format:Y-m-d H:i',
+            'match_date' => 'nullable|date_format:Y-m-d',
+            'match_time' => 'nullable|date_format:H:i',
             'location' => 'required|string|max:255',
             'type' => 'required|in:home,away',
             'status' => 'required|in:scheduled,completed,cancelled',
@@ -85,6 +95,14 @@ class MatchController extends Controller
             'opponent_score' => 'nullable|integer|min:0',
             'notes' => 'nullable|string',
         ]);
+
+        // Combine date and time into Y-m-d H:i format if both provided
+        if ($validated['match_date'] && $validated['match_time']) {
+            $validated['match_date'] = $validated['match_date'] . ' ' . $validated['match_time'];
+        } else {
+            $validated['match_date'] = null;
+        }
+        unset($validated['match_time']);
 
         $match->update($validated);
 

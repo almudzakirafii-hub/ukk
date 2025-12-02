@@ -5,31 +5,37 @@ Website resmi tim basket **Garuda Hustler** dari SMK Negeri 1 Garut yang menampi
 ## 📋 Fitur Utama
 
 ### Frontend (Public)
-- ✅ **Homepage** - Halaman beranda dengan slider dan statistik tim
-- ✅ **Informasi Tim** - Profil lengkap tim dan roster pemain aktif
-- ✅ **Jadwal Pertandingan** - Daftar pertandingan dengan hasil dan detail
-- ✅ **Galeri Foto** - Koleksi momen-momen tim dalam format responsif
-- ✅ **Berita** - Artikel dan berita terbaru tentang tim
-- ✅ **Autentikasi** - Login dan register untuk member
+
+-   ✅ **Homepage** - Halaman beranda dengan slider dan statistik tim
+-   ✅ **Informasi Tim** - Profil lengkap tim dan roster pemain aktif
+-   ✅ **Jadwal Pertandingan** - Daftar pertandingan dengan hasil dan detail
+-   ✅ **Galeri Foto** - Koleksi momen-momen tim dalam format responsif
+-   ✅ **Berita** - Artikel dan berita terbaru tentang tim
+-   ✅ **Autentikasi** - Login untuk admin dan member
 
 ### Admin Panel
-- ✅ **Dashboard** - Statistik dan overview data tim
-- ✅ **Manajemen Pemain** - CRUD operasi untuk data pemain
-- ✅ **Manajemen Pertandingan** - CRUD operasi untuk jadwal dan hasil
-- ✅ **Manajemen Galeri** - Upload dan kelola foto tim
-- ✅ **Manajemen Berita** - Buat dan edit artikel berita
+
+-   ✅ **Dashboard** - Statistik dan overview data tim
+-   ✅ **Manajemen Pemain** - CRUD operasi untuk data pemain
+-   ✅ **Manajemen Pertandingan** - CRUD operasi untuk jadwal dan hasil
+-   ✅ **Manajemen Galeri** - Upload dan kelola foto tim
+-   ✅ **Manajemen Berita** - Buat dan edit artikel berita
+-   ✅ **Responsive Mobile** - Admin panel fully responsive di semua device
+-   ✅ **Navigasi Kembali** - Tombol untuk kembali ke website dari admin panel
 
 ## 🛠 Tech Stack
 
 ### Backend
-- **Laravel 12** - PHP Framework modern
-- **MySQL** - Database relasional
-- **Blade Template** - Template engine
+
+-   **Laravel 12** - PHP Framework modern
+-   **MySQL** - Database relasional
+-   **Blade Template** - Template engine
 
 ### Frontend
-- **Tailwind CSS** - Utility-first CSS framework
-- **AOS (Animate On Scroll)** - Animasi scroll
-- **Responsive Design** - Mobile-first approach
+
+-   **Tailwind CSS** - Utility-first CSS framework
+-   **AOS (Animate On Scroll)** - Animasi scroll
+-   **Responsive Design** - Mobile-first approach
 
 ## 📦 Struktur Project
 
@@ -81,53 +87,60 @@ garuda-smkn-ukk/
 ## 🚀 Instalasi & Setup
 
 ### Prasyarat
-- PHP 8.2+
-- MySQL 5.7+
-- Composer
-- Node.js & npm
+
+-   PHP 8.2+
+-   MySQL 5.7+
+-   Composer
+-   Node.js & npm
 
 ### Langkah Instalasi
 
 1. **Clone repository**
-   ```bash
-   git clone <repository-url>
-   cd garuda-smkn-ukk
-   ```
+
+    ```bash
+    git clone <repository-url>
+    cd garuda-smkn-ukk
+    ```
 
 2. **Install dependencies**
-   ```bash
-   composer install
-   npm install
-   ```
+
+    ```bash
+    composer install
+    npm install
+    ```
 
 3. **Setup environment**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
 4. **Konfigurasi database**
    Edit `.env`:
-   ```
-   DB_DATABASE=dbgarudahustler
-   DB_USERNAME=root
-   DB_PASSWORD=
-   ```
+
+    ```
+    DB_DATABASE=dbgarudahustler
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
 5. **Jalankan migration dan seed**
-   ```bash
-   php artisan migrate:fresh --seed
-   ```
+
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
 6. **Build assets**
-   ```bash
-   npm run build
-   ```
+
+    ```bash
+    npm run build
+    ```
 
 7. **Jalankan development server**
-   ```bash
-   php artisan serve
-   ```
+    ```bash
+    php artisan serve
+    ```
 
 Akses aplikasi di `http://localhost:8000`
 
@@ -136,64 +149,74 @@ Akses aplikasi di `http://localhost:8000`
 Setelah seeding, akun berikut tersedia:
 
 **Admin Account:**
-- Email: `admin@garuda.test`
-- Password: `password`
+
+-   Email: `admin@garuda.test`
+-   Password: `password`
 
 **Member Accounts:**
-- Email: `{name}@example.com` (auto-generated)
-- Password: `password`
+
+-   Email: `{name}@example.com` (auto-generated)
+-   Password: `password`
 
 ## 📚 Penggunaan
 
 ### Akses Frontend
-- **Homepage**: `http://localhost:8000/`
-- **Tim**: `http://localhost:8000/team`
-- **Jadwal**: `http://localhost:8000/schedule`
-- **Galeri**: `http://localhost:8000/gallery`
-- **Berita**: `http://localhost:8000/news`
+
+-   **Homepage**: `http://localhost:8000/`
+-   **Tim**: `http://localhost:8000/team`
+-   **Jadwal**: `http://localhost:8000/schedule`
+-   **Galeri**: `http://localhost:8000/gallery`
+-   **Berita**: `http://localhost:8000/news`
 
 ### Akses Admin Panel
-- **Admin Login**: `http://localhost:8000/login`
-- **Dashboard**: `http://localhost:8000/admin/dashboard`
-- **Manajemen Pemain**: `http://localhost:8000/admin/players`
-- **Manajemen Pertandingan**: `http://localhost:8000/admin/matches`
-- **Manajemen Galeri**: `http://localhost:8000/admin/gallery`
-- **Manajemen Berita**: `http://localhost:8000/admin/news`
+
+-   **Admin Login**: `http://localhost:8000/login`
+-   **Dashboard**: `http://localhost:8000/admin/dashboard`
+-   **Manajemen Pemain**: `http://localhost:8000/admin/players`
+-   **Manajemen Pertandingan**: `http://localhost:8000/admin/matches`
+-   **Manajemen Galeri**: `http://localhost:8000/admin/gallery`
+-   **Manajemen Berita**: `http://localhost:8000/admin/news`
 
 ## 🔐 Sistem Autentikasi
 
 Aplikasi menggunakan:
-- **Role-based Access Control (RBAC)** - Admin dan Member roles
-- **Session-based Authentication** - Laravel built-in authentication
-- **Admin Middleware** - Proteksi halaman admin dari akses unauthorized
-- **Password Hashing** - Menggunakan bcrypt untuk keamanan
+
+-   **Role-based Access Control (RBAC)** - Admin dan Member roles
+-   **Session-based Authentication** - Laravel built-in authentication
+-   **Admin Middleware** - Proteksi halaman admin dari akses unauthorized
+-   **Password Hashing** - Menggunakan bcrypt untuk keamanan
+-   **Smart Login Redirect** - User secara otomatis diarahkan ke dashboard sesuai role
 
 ## 📝 Validasi Form
 
 Semua form input divalidasi dengan:
-- **Server-side validation** - Menggunakan Laravel Validation Rules
-- **Error messages** - Pesan error user-friendly dalam bahasa Indonesia
-- **CSRF Protection** - Proteksi terhadap CSRF attacks
-- **Unique constraints** - Untuk email, jersey number, dll
+
+-   **Server-side validation** - Menggunakan Laravel Validation Rules
+-   **Error messages** - Pesan error user-friendly dalam bahasa Indonesia
+-   **CSRF Protection** - Proteksi terhadap CSRF attacks
+-   **Unique constraints** - Untuk email, jersey number, dll
 
 ## 🎨 Design & UX
 
-- **Responsive Design** - Mobile-first, works on all devices
-- **Modern UI** - Gradient backgrounds, smooth animations
-- **Accessible** - WCAG compliance considerations
-- **Fast Loading** - Optimized assets dan caching
-- **Smooth Animations** - AOS library untuk scroll animations
+-   **Responsive Design** - Mobile-first, works on all devices
+-   **Modern UI** - Gradient backgrounds, smooth animations
+-   **Accessible** - WCAG compliance considerations
+-   **Fast Loading** - Optimized assets dan caching
+-   **Smooth Animations** - AOS library untuk scroll animations
+-   **Mobile Admin Panel** - Hamburger menu dan sidebar overlay untuk mobile
+-   **Simplified Forms** - Input forms yang user-friendly dengan validasi real-time
 
 ## 🗄️ Database Schema
 
 ### Tables
-- `users` - User accounts (Admin, Member)
-- `teams` - Tim basket
-- `players` - Pemain tim
-- `matches` - Pertandingan (table name)
-- `events` - Event/acara
-- `galleries` - Foto galeri
-- `news` - Berita/artikel
+
+-   `users` - User accounts (Admin, Member)
+-   `teams` - Tim basket
+-   `players` - Pemain tim
+-   `matches` - Pertandingan (table name)
+-   `events` - Event/acara
+-   `galleries` - Foto galeri
+-   `news` - Berita/artikel
 
 ## 📋 Kriteria Penilaian (PPL)
 
@@ -236,63 +259,77 @@ php artisan test tests/Feature/PlayerTest.php
 ## 🐛 Debugging
 
 Untuk debugging:
-- Set `APP_DEBUG=true` di `.env`
-- Gunakan `dd()` function untuk dump & die
-- Check `storage/logs/laravel.log` untuk error logs
-- Gunakan Laravel Debugbar (optional)
+
+-   Set `APP_DEBUG=true` di `.env`
+-   Gunakan `dd()` function untuk dump & die
+-   Check `storage/logs/laravel.log` untuk error logs
+-   Gunakan Laravel Debugbar (optional)
 
 ## 📱 Fitur Responsif
 
 Website fully responsive:
-- Desktop (1920px+)
-- Tablet (768px - 1024px)
-- Mobile (320px - 767px)
+
+-   Desktop (1920px+)
+-   Tablet (768px - 1024px)
+-   Mobile (320px - 767px)
 
 Semua komponen dioptimasi untuk semua ukuran layar.
 
 ## 🔄 Continuous Improvement
 
 Fitur yang dapat ditambahkan di masa depan:
-- [ ] User profile management
-- [ ] Statistics & analytics
-- [ ] Email notifications
-- [ ] Social media integration
-- [ ] Live scoring
-- [ ] Mobile app
-- [ ] Payment gateway untuk sponsorship
+
+-   [ ] User profile management
+-   [ ] Statistics & analytics dashboard
+-   [ ] Email notifications untuk jadwal pertandingan
+-   [ ] Social media integration
+-   [ ] Live scoring dengan real-time updates
+-   [ ] Mobile app untuk iOS dan Android
+-   [ ] Payment gateway untuk sponsorship
+-   [ ] Ticket booking system
+-   [ ] Team member forum/chat
 
 ## 📄 Lisensi
 
 MIT License - Free for educational purposes
-
-## 👨‍💻 Author
+👨‍💻 Author
 
 Dibuat untuk Ujian Kompetensi Keahlian (UKK) SMK Negeri 1 Garut
+
+## 🎯 Fitur Terbaru (Latest Updates)
+
+### v1.1.0 - Mobile Responsive & Form Simplification
+
+-   **Admin Panel Mobile Responsive** - Interface responsif dengan hamburger menu untuk mobile
+-   **Simplified Match Input** - Form pertandingan dengan input terpisah untuk tanggal dan waktu, serta opsional
+-   **Back to Website Button** - Tombol navigasi untuk kembali ke halaman website dari admin panel
+-   **Improved Mobile UX** - Sidebar overlay dan smooth transitions untuk mobile navigation
+    Dibuat untuk Ujian Kompetensi Keahlian (UKK) SMK Negeri 1 Garut
 
 ## 📧 Support
 
 Untuk pertanyaan atau laporan bug, silakan hubungi:
-- Email: info@garudahustler.com
-- Phone: +62 123 456 789
+
+-   Email: info@garudahustler.com
+-   Phone: +62 123 456 789
 
 ---
 
 **Garuda Hustler Basketball Team** 🏀
-*Proud to Represent SMK Negeri 1 Garut*
-
+_Proud to Represent SMK Negeri 1 Garut_
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
 ### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+-   **[Vehikl](https://vehikl.com)**
+-   **[Tighten Co.](https://tighten.co)**
+-   **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+-   **[64 Robots](https://64robots.com)**
+-   **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+-   **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+-   **[Redberry](https://redberry.international/laravel-development)**
+-   **[Active Logic](https://activelogic.com)**
 
 ## Contributing
 
@@ -309,5 +346,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-#   u k k  
+#   u k k 
+ 
  

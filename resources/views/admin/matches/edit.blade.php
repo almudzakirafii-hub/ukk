@@ -27,9 +27,16 @@
                 <input type="text" id="opponent" name="opponent" class="w-full bg-[#0d1b2a]/50 border border-[#FFD700]/30 rounded-lg px-4 py-2 text-white placeholder-white/50 focus:border-[#FFD700] focus:outline-none focus:ring-2 focus:ring-[#FFD700]/20" required value="{{ $match->opponent }}">
             </div>
             
-            <div>
-                <label for="match_date" class="block text-sm font-bold text-[#FFD700] mb-2">Tanggal & Waktu</label>
-                <input type="datetime-local" id="match_date" name="match_date" class="w-full bg-[#0d1b2a]/50 border border-[#FFD700]/30 rounded-lg px-4 py-2 text-white focus:border-[#FFD700] focus:outline-none focus:ring-2 focus:ring-[#FFD700]/20" required value="{{ $match->match_date->format('Y-m-d\TH:i') }}">
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="match_date" class="block text-sm font-bold text-[#FFD700] mb-2">Tanggal (Opsional)</label>
+                    <input type="date" id="match_date" name="match_date" class="w-full bg-[#0d1b2a]/50 border border-[#FFD700]/30 rounded-lg px-4 py-2 text-white focus:border-[#FFD700] focus:outline-none focus:ring-2 focus:ring-[#FFD700]/20" value="{{ $match->match_date ? $match->match_date->format('Y-m-d') : '' }}">
+                </div>
+                
+                <div>
+                    <label for="match_time" class="block text-sm font-bold text-[#FFD700] mb-2">Waktu (Opsional)</label>
+                    <input type="time" id="match_time" name="match_time" class="w-full bg-[#0d1b2a]/50 border border-[#FFD700]/30 rounded-lg px-4 py-2 text-white focus:border-[#FFD700] focus:outline-none focus:ring-2 focus:ring-[#FFD700]/20" value="{{ $match->match_date ? $match->match_date->format('H:i') : '' }}">
+                </div>
             </div>
             
             <div>

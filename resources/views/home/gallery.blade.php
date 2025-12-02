@@ -27,36 +27,36 @@
 <!-- Gallery Grid -->
 <section class="py-20 bg-gradient-to-b from-[#1a1f35] to-[#0d1b2a]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        @forelse($galleries as $gallery)
-        @if($loop->first)
+        
+        @if($galleries->isNotEmpty())
+        
+        <!-- Item pertama tampil beda -->
         <div class="mb-12">
             <div class="group" data-aos="zoom-in">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#FFD700]/20 hover:shadow-[0_20px_60px_rgba(255,215,0,0.2)] transition-all duration-300 border border-[#FFD700]/20">
-                    <img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}" class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <img src="{{ asset($galleries[0]->image) }}" alt="{{ $galleries[0]->title }}" class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-500">
                     
                     <div class="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     <div class="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 class="text-3xl font-black mb-2 text-[#FFD700]">{{ $gallery->title }}</h3>
-                        <p class="text-gray-300 line-clamp-2 mb-3">{{ $gallery->description }}</p>
+                        <h3 class="text-3xl font-black mb-2 text-[#FFD700]">{{ $galleries[0]->title }}</h3>
+                        <p class="text-gray-300 line-clamp-2 mb-3">{{ $galleries[0]->description }}</p>
                         <div class="flex gap-4 text-sm">
-                            @if($gallery->taken_date)
-                            <span class="flex items-center">📅 {{ $gallery->taken_date->format('d M Y') }}</span>
+                            @if($galleries[0]->taken_date)
+                            <span class="flex items-center">📅 {{ $galleries[0]->taken_date->format('d M Y') }}</span>
                             @endif
-                            @if($gallery->category)
-                            <span class="flex items-center">🏷️ {{ $gallery->category }}</span>
+                            @if($galleries[0]->category)
+                            <span class="flex items-center">🏷️ {{ $galleries[0]->category }}</span>
                             @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @endif
-        @endforelse
         
-        <!-- Gallery Grid -->
+        <!-- Grid sisanya -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            @forelse($galleries as $gallery)
+            @foreach($galleries->skip(1) as $gallery)
             <div class="group" data-aos="zoom-in" data-aos-delay="{{$loop->index * 50}}">
                 <div class="relative rounded-2xl overflow-hidden shadow-lg shadow-[#FFD700]/10 hover:shadow-2xl hover:shadow-[#FFD700]/30 transition-all duration-300 h-72 bg-[#1a1f35] border border-[#FFD700]/20">
                     <img src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover transform group-hover:scale-120 transition-transform duration-500">
@@ -69,13 +69,15 @@
                     </div>
                 </div>
             </div>
-            @empty
-            <div class="col-span-full text-center py-16">
-                <div class="text-6xl mb-4">📸</div>
-                <p class="text-lg text-gray-400">Belum ada galeri foto</p>
-            </div>
-            @endforelse
+            @endforeach
         </div>
+        
+        @else
+        <div class="col-span-full text-center py-16">
+            <div class="text-6xl mb-4">📸</div>
+            <p class="text-lg text-gray-400">Belum ada galeri foto</p>
+        </div>
+        @endif
         
         <!-- Pagination -->
         @if($galleries->hasPages())
