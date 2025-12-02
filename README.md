@@ -9,51 +9,54 @@ Aplikasi ini dibuat sebagai bagian dari **Ujian Kompetensi Keahlian (UKK)** untu
 ## ✨ Fitur Utama
 
 ### Frontend
-- 🏠 Homepage dengan statistik tim
-- 👥 Halaman informasi tim & roster pemain
-- 📅 Jadwal pertandingan dengan hasil dan score
-- 📷 Galeri foto responsive
-- 📰 Berita & artikel terbaru
-- 🔐 Login untuk akses admin
+
+-   🏠 Homepage dengan statistik tim
+-   👥 Halaman informasi tim & roster pemain
+-   📅 Jadwal pertandingan dengan hasil dan score
+-   📷 Galeri foto responsive
+-   📰 Berita & artikel terbaru
+-   🔐 Login untuk akses admin
 
 ### Admin Panel
-- 📊 Dashboard dengan overview data
-- 👤 Manajemen pemain (tambah, edit, hapus)
-- 🎮 Manajemen pertandingan
-- 🖼️ Upload dan kelola galeri
-- 📝 Buat dan publikasi berita
-- 📱 Fully responsive di mobile
+
+-   📊 Dashboard dengan overview data
+-   👤 Manajemen pemain (tambah, edit, hapus)
+-   🎮 Manajemen pertandingan
+-   🖼️ Upload dan kelola galeri
+-   📝 Buat dan publikasi berita
+-   📱 Fully responsive di mobile
 
 ## 🛠️ Teknologi
 
-| Layer | Technology |
-|-------|-----------|
-| Backend | Laravel 12, PHP 8.2+, MySQL |
+| Layer    | Technology                   |
+| -------- | ---------------------------- |
+| Backend  | Laravel 12, PHP 8.2+, MySQL  |
 | Frontend | Tailwind CSS, Blade Template |
-| Tools | Vite, Composer, NPM |
-| Database | MySQL 5.7+ |
+| Tools    | Vite, Composer, NPM          |
+| Database | MySQL 5.7+                   |
 
 ## 📊 Database Schema (ERD)
 
 ![ERD - Garuda Hustler Database](public/images/dump/image.png)
 
 ### Tabel Utama
-- **users** - Admin dan member accounts
-- **teams** - Informasi tim basket
-- **players** - Daftar pemain
-- **games** - Jadwal dan hasil pertandingan  
-- **galleries** - Koleksi foto
-- **news** - Artikel dan berita
-- **events** - Event/kegiatan tim
+
+-   **users** - Admin dan member accounts
+-   **teams** - Informasi tim basket
+-   **players** - Daftar pemain
+-   **games** - Jadwal dan hasil pertandingan
+-   **galleries** - Koleksi foto
+-   **news** - Artikel dan berita
+-   **events** - Event/kegiatan tim
 
 ## 👤 Use Case Diagram
 
-(public/images/dump/Untitled Workspace.jpg)
-
+![Use Case - Garuda Hustler Database](public/images/dump/Untitled Workspace.jpg)
 
 ## 🚀 Instalasi
 
 ### Requirements
+
 ```bash
 - PHP 8.2+
 - MySQL 5.7+
@@ -64,85 +67,92 @@ Aplikasi ini dibuat sebagai bagian dari **Ujian Kompetensi Keahlian (UKK)** untu
 ### Setup
 
 1. **Clone & install dependencies**
-   ```bash
-   git clone <repo-url>
-   cd garuda-smkn-ukk
-   composer install
-   npm install
-   ```
+
+    ```bash
+    git clone <repo-url>
+    cd garuda-smkn-ukk
+    composer install
+    npm install
+    ```
 
 2. **Environment setup**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
 3. **Database config**
-   ```bash
-   # Edit .env
-   DB_DATABASE=dbgarudahustler
-   DB_USERNAME=root
-   DB_PASSWORD=
-   
-   # Jalankan migration & seed
-   php artisan migrate:fresh --seed
-   ```
+
+    ```bash
+    # Edit .env
+    DB_DATABASE=dbgarudahustler
+    DB_USERNAME=root
+    DB_PASSWORD=
+
+    # Jalankan migration & seed
+    php artisan migrate:fresh --seed
+    ```
 
 4. **Build & run**
-   ```bash
-   npm run build
-   php artisan serve
-   ```
+    ```bash
+    npm run build
+    php artisan serve
+    ```
 
 Buka `http://localhost:8000`
 
 ## 🔑 Default Account
 
-| Role | Email | Password |
-|------|-------|----------|
-| Admin | admin@garuda.test | password |
-| Member | user@example.com | password |
+| Role   | Email             | Password |
+| ------ | ----------------- | -------- |
+| Admin  | admin@garuda.test | password |
+| Member | user@example.com  | password |
 
 ## 📍 Routes
 
 ### Frontend
-- `/` - Homepage
-- `/team` - Informasi Tim
-- `/schedule` - Jadwal Pertandingan
-- `/gallery` - Galeri Foto
-- `/news` - Berita
-- `/login` - Login
+
+-   `/` - Homepage
+-   `/team` - Informasi Tim
+-   `/schedule` - Jadwal Pertandingan
+-   `/gallery` - Galeri Foto
+-   `/news` - Berita
+-   `/login` - Login
 
 ### Admin Panel
-- `/admin` - Dashboard
-- `/admin/players` - Manajemen Pemain
-- `/admin/matches` - Manajemen Pertandingan
-- `/admin/gallery` - Manajemen Galeri
-- `/admin/news` - Manajemen Berita
+
+-   `/admin` - Dashboard
+-   `/admin/players` - Manajemen Pemain
+-   `/admin/matches` - Manajemen Pertandingan
+-   `/admin/gallery` - Manajemen Galeri
+-   `/admin/news` - Manajemen Berita
 
 ## 🔒 Keamanan
 
-- ✅ CSRF Protection
-- ✅ Password Hashing (bcrypt)
-- ✅ Role-Based Access Control
-- ✅ SQL Injection Prevention (Eloquent ORM)
-- ✅ XSS Protection (Blade escaping)
-- ✅ Input Validation
+-   ✅ CSRF Protection
+-   ✅ Password Hashing (bcrypt)
+-   ✅ Role-Based Access Control
+-   ✅ SQL Injection Prevention (Eloquent ORM)
+-   ✅ XSS Protection (Blade escaping)
+-   ✅ Input Validation
 
 ## 📱 Responsive
 
 Website responsive di semua ukuran layar:
-- 📱 Mobile: 320px - 767px
-- 💻 Tablet: 768px - 1024px  
-- 🖥️ Desktop: 1920px+
+
+-   📱 Mobile: 320px - 767px
+-   💻 Tablet: 768px - 1024px
+-   🖥️ Desktop: 1920px+
 
 ## 📝 Features Terbaru
 
 ### v1.1.0 - Mobile & Form Improvements
-- Admin panel fully responsive dengan hamburger menu
-- Input pertandingan dipisah (date & time) lebih simple
-- Tombol navigasi kembali ke website
-- Smooth sidebar overlay untuk mobile
+
+-   Admin panel fully responsive dengan hamburger menu
+-   Input pertandingan dipisah (date & time) lebih simple
+-   Tombol navigasi kembali ke website
+-   Smooth sidebar overlay untuk mobile
 
 ## 👨‍💻 Pengembang
 
@@ -156,4 +166,4 @@ MIT License - Bebas untuk penggunaan edukatif
 ---
 
 **Garuda Hustler Basketball Team** 🏀  
-*SMK Negeri 1 Garut*
+_SMK Negeri 1 Garut_
